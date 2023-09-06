@@ -8,7 +8,8 @@ $base-yelow: #FADF4F;
 
 
 .container {
-    margin: 0 40px 0 40px;
+    max-width: 1360px;
+    margin: 0 auto;
 }
 header {
     background: $base-fiolet;
@@ -35,15 +36,11 @@ header {
                     letter-spacing: 0em;
                     text-decoration: none;
                     color: #fff;
-
+                    
                     span {
-                        font-size: 20px;
-                    font-weight: 500;
-                    line-height: 25px;
-                    letter-spacing: 0em;
-                    text-decoration: none;
-                    color: #fff;
+                        max-width: 17px;
                     }
+
                 }
 
                 &:hover {
@@ -137,6 +134,135 @@ header {
     }
     
 }
+//main post
+  
+.main_posts {
+    font-family: 'ProbaPro-Medium', sans-serif;
+    padding: 120px 0;
 
-  
-  
+    .header_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        color: $base-fiolet;
+
+        h2 {
+            font-size: 70px;
+            font-weight: 500;
+            line-height: 89px;
+            margin: 0;
+        }
+
+        a {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 41px;
+            text-decoration: none;
+
+            &:hover {
+                color: $base-yelow;
+            }
+        }
+    }
+
+    .posts_wrapper {
+        display: flex;
+        justify-content: space-between;
+        
+        .post_term {
+            background-color: $base-yelow;
+            margin-right: 16px;
+            border-radius: 25px;
+            width: 100%;
+            max-width: fit-content;
+            padding: 7px 17px;
+            margin-right: 13px;
+            a {
+                color: $base-fiolet;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px;
+                text-decoration: none;
+                text-transform: lowercase;
+            }
+        }
+
+        .anons_post {
+            max-width: 618px;
+            width: 100%;
+            position: relative;
+            padding: 24px 30px;
+
+            img {
+                position: absolute;
+                z-index: -1;
+            }
+            
+
+        }
+
+        .other_posts {
+            .small_post {
+                display: flex;
+                max-width: 618px;
+                width: 100%;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                padding-top: 40px;
+                margin-bottom: 50px;
+                position: relative;
+    
+                img {
+                    max-width: 223px;
+                }
+    
+                .content {
+                    margin-left: 20px;
+    
+                    .post_header {
+                        display: flex;
+                        align-items: center;
+    
+                        time {
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 18px;
+                            color: rgba(0, 0, 0, 0.2);
+                              
+                        }
+                    }
+
+                    .description {
+                        margin-top: 12px;
+
+                        p {
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 26px;
+                            margin: 0;
+                        }
+                    }
+
+                    .topic {
+                        position: absolute;
+                        bottom: 0;
+                        a {
+                            text-decoration: none;
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 18px;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                            border-radius: 25px;
+                            padding: 3px 17px;
+                            text-transform: lowercase;
+                            margin-right: 10px;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+    }
+}

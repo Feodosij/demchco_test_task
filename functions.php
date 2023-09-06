@@ -14,6 +14,9 @@ if( ! function_exists('demchco_setup')) {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 
+		add_image_size('big', 618, 463, true);
+		add_image_size('small', 223, 167, true);
+
 
 	}
 

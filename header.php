@@ -251,19 +251,7 @@
                         'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     ] );
                 ?>
-            </div>
-
-            
-            
-            <!-- <ul>
-                <li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25 social-menu-item">
-                    <a href="https://uk-ua.facebook.com/">
-                        <span class="menu-image-title-show menu-image-title">En</span>
-                        <span class="dashicons"></span>
-                    </a>
-                </li>
-            </ul> -->
-            
+            </div>        
 
         </div>
     </div>

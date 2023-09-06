@@ -17,31 +17,148 @@
     <div class="container">
         <div class="header_wrapper">
             <h2>Публікації</h2>
-            <a href="http://">усі публікіції</a>
+            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">усі публікіції</a>
         </div>
 
-        
-    <?php 
-        $args = array(
-            'post_type' => 'post',
-            'post_per_page' => 1,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'publication-type',
-                    'field' => 'slug',
-                    'terms' => 'anons'
-                )
-            )
-        );
+        <div class="posts_wrapper">
+            <div class="anons_post">
+                <?php 
+                    $args = array(
+                        'post_type' => 'post',
+                        'post_per_page' => 1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'publication-type',
+                                'field' => 'slug',
+                                'terms' => 'anons'
+                            )
+                        )
+                    );
 
-        $loop = new WP_Query($args);
+                    $loop = new WP_Query($args);
 
-        while ( $loop->have_posts() ) : $loop->the_post(); ?>
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            <hr>
-            <?php the_content(); ?>
+                    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-            <?php wp_reset_postdata();
-        endwhile; ?>
+                        <?php if ( has_post_thumbnail() ) {
+                            the_post_thumbnail( 'big', array( 'class' => 'card__image' ) );
+                        } else {
+                            echo '<img class="card__thumbn" src="' . get_template_directory_uri() . '/img/blur-post.jpg" alt="blur-post-image">';
+                        } ?>
+                        <div class="post_term">
+                            <?php 
+                                $terms = get_the_terms( $post->ID, 'publication-type' );
+                                
+                                if ( $terms && ! is_wp_error( $terms ) ) {
+                                    foreach ( $terms as $term ) {
+                                        $term_link = get_term_link( $term );
+                                        echo '<a href=" ' . esc_url($term_link) . ' ">' . $term->name . '</a>';
+                                    }
+                                }
+                            ?>
+                        </div>
+                       
+                        <div class="content">
+                            <time datetime="2011-04-01">04/01/11</time>
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <div class="description">
+                                <?php the_content(); ?>
+                            </div>  
+                            <div class="topic">
+                                <?php 
+                                    // Получаем текущий термин
+                                    $topics = get_the_terms( $post->ID, 'publication-topic' );
+                                    
+                                    if ( $topics && ! is_wp_error( $topics ) ) {
+                                        foreach ( $topics as $topic ) {
+                                            $topic_link = get_term_link( $topic );
+                                            echo '<a href=" ' . esc_url($topic_link) . '">' . $topic->name . '</a>'; // Выводим только имя термина
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
+
+                        <?php wp_reset_postdata();
+                    endwhile; 
+                ?>
+            </div>
+
+
+
+
+
+
+            <div class="other_posts">
+
+
+            
+                 <?php 
+                    $args = array(
+                        'post_type' => 'post',
+                        'post_per_page' => 2,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'publication-type',
+                                'field' => 'slug',
+                                'terms' => 'anons',
+                                'operator' => 'NOT IN',
+                            )
+                        )
+                    );
+
+                    $loop = new WP_Query($args);
+
+                    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                        <div class="small_post">
+                                <?php if ( has_post_thumbnail() ) {
+                                the_post_thumbnail( 'small', array( 'class' => 'card__image' ) );
+                                } else {
+                                    echo '<img class="card__thumbn" src="' . get_template_directory_uri() . '/img/blur-post.jpg" alt="blur-post-image">';
+                                } ?>
+
+                            <div class="content">
+                                <div class="post_header">
+                                    <div class="post_term">
+                                        <?php 
+                                            $terms = get_the_terms( $post->ID, 'publication-type' );
+                                            
+                                            if ( $terms && ! is_wp_error( $terms ) ) {
+                                                foreach ( $terms as $term ) {
+                                                    $term_link = get_term_link( $term );
+                                                    echo '<a href=" ' . esc_url($term_link) . ' ">' . $term->name . '</a>';
+                                                }
+                                            }
+                                        ?>
+                                        
+                                    </div>
+                                    <time datetime="2011-04-01">04/01/11</time>
+                                </div>
+                                
+
+                                <div class="description">
+                                    <?php the_content(); ?>
+                                </div>  
+                                <div class="topic">
+                                    <?php 
+                                        $topics = get_the_terms( $post->ID, 'publication-topic' );
+                                        
+                                        if ( $topics && ! is_wp_error( $topics ) ) {
+                                            foreach ( $topics as $topic ) {
+                                                $topic_link = get_term_link( $topic );
+                                                echo '<a href=" ' . esc_url($topic_link) . '">' . $topic->name . '</a>';
+                                            }
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+                        <?php 
+                    endwhile; 
+                ?>
+            </div>
+        </div>
+   
     </div>
 </section>
