@@ -1,0 +1,22 @@
+/**
+ * Theme Name:  dev_theme
+ * Description: site for dev test
+ * 
+ * Author:      Feodosii
+ *
+ * Version:     1.0
+ */
+
+@font-face {
+    font-family: 'ProbaPro-Medium';
+    src: url('fonts/ProbaPro-Medium.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaPro-SemiBold';
+    src: url('fonts/ProbaPro-SemiBold.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+}

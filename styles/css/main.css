@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 40px 0 40px;
+}
+
+header {
+  background: #6969B9;
+  min-height: 105px;
+}
+header .header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1288px;
+  margin: 0 auto;
+  align-items: center;
+}
+header .header_wrapper ul {
+  list-style: none;
+  display: flex;
+}
+header .header_wrapper ul li {
+  padding: 24px;
+}
+header .header_wrapper ul li a {
+  font-family: "ProbaPro-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  color: #fff;
+}
+header .header_wrapper ul li a span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  color: #fff;
+}
+header .header_wrapper ul li:hover {
+  cursor: pointer;
+}
+header .header_wrapper ul li:hover a {
+  color: #FADF4F;
+}
+
+.main_banner {
+  background-color: #6969B9;
+  min-height: 556px;
+  font-family: "ProbaPro-Medium", sans-serif;
+  color: white;
+  position: relative;
+}
+.main_banner .image_frame {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.main_banner .title_banner {
+  font-weight: 500;
+  font-size: 125px;
+  line-height: 111px;
+  max-width: 528px;
+  margin-bottom: 26px;
+  margin-top: 0;
+  padding-top: 62px;
+  z-index: 1;
+}
+.main_banner .banner_description {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+  max-width: 569px;
+  z-index: 1;
+}
+
+.card_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 60px auto 40px;
+  justify-content: center;
+  gap: 30px;
+}
+.card_wrapper .card {
+  font-family: "ProbaPro-Medium", sans-serif;
+  max-width: 620px;
+  display: flex;
+}
+.card_wrapper .card .card__thumbn {
+  margin-right: 16px;
+  max-width: 250px;
+  object-fit: contain;
+}
+.card_wrapper .card .card__body {
+  padding: 16px;
+}
+.card_wrapper .card .card__body .tag {
+  background-color: #FADF4F;
+  margin-right: 16px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: fit-content;
+}
+.card_wrapper .card .card__body .tag span {
+  color: #6969B9;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  padding: 4px 17px;
+}
+/*# sourceMappingURL=main.css.map */

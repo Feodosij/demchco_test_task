@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+$base-fiolet: #6969B9;
+$base-yelow: #FADF4F;
+
+
+.container {
+    margin: 0 40px 0 40px;
+}
+header {
+    background: $base-fiolet;
+    min-height: 105px;
+
+    .header_wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1288px;
+        margin: 0 auto;
+        align-items: center;
+
+        ul {
+            list-style: none;
+            display: flex;
+            li {
+                padding: 24px;
+                a {
+                    font-family: 'ProbaPro-Medium', sans-serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-decoration: none;
+                    color: #fff;
+
+                    span {
+                        font-size: 20px;
+                    font-weight: 500;
+                    line-height: 25px;
+                    letter-spacing: 0em;
+                    text-decoration: none;
+                    color: #fff;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        color: #FADF4F;
+                    }
+                    cursor: pointer;
+                    
+                }
+
+            }
+        }
+    }
+}
+
+.main_banner {
+    background-color: $base-fiolet;
+    min-height: 556px;
+    font-family: 'ProbaPro-Medium', sans-serif;
+    color: white;
+    position: relative;
+
+    .image_frame {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    .title_banner {
+        font-weight: 500;
+        font-size: 125px;
+        line-height: 111px;
+        max-width: 528px;
+        margin-bottom: 26px;
+        margin-top: 0;
+        padding-top: 62px;
+        z-index: 1;
+    }
+
+    .banner_description {
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 28px;
+        max-width: 569px;
+        z-index: 1;
+    }
+
+}
+
+// post card
+
+.card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 60px auto 40px;
+    justify-content: center;
+    gap: 30px;
+
+    .card {
+        font-family: 'ProbaPro-Medium', sans-serif;
+        max-width: 620px;
+        display: flex;
+
+        .card__thumbn {
+            margin-right: 16px;
+            max-width: 250px;
+            object-fit: contain;
+        }
+
+        .card__body {
+            padding: 16px;
+
+            .tag {
+                background-color: $base-yelow;
+                margin-right: 16px;
+                border-radius: 25px;
+                width: 100%;
+                max-width: fit-content;
+
+                span {
+                    color: $base-fiolet;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 18px;
+                    padding: 4px 17px;
+                }
+            }
+        }
+    }
+    
+}
+
+  
+  
