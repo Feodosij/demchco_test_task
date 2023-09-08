@@ -65,13 +65,12 @@
                             </div>  
                             <div class="topic">
                                 <?php 
-                                    // Получаем текущий термин
                                     $topics = get_the_terms( $post->ID, 'publication-topic' );
                                     
                                     if ( $topics && ! is_wp_error( $topics ) ) {
                                         foreach ( $topics as $topic ) {
                                             $topic_link = get_term_link( $topic );
-                                            echo '<a href=" ' . esc_url($topic_link) . '">' . $topic->name . '</a>'; // Выводим только имя термина
+                                            echo '<a href=" ' . esc_url($topic_link) . '">' . $topic->name . '</a>';
                                         }
                                     }
                                 ?>
@@ -83,15 +82,7 @@
                 ?>
             </div>
 
-
-
-
-
-
             <div class="other_posts">
-
-
-            
                  <?php 
                     $args = array(
                         'post_type' => 'post',
@@ -162,3 +153,5 @@
    
     </div>
 </section>
+
+<?php get_footer(); ?>

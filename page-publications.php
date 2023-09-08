@@ -1,3 +1,4 @@
-
 <?php get_header();
-echo 'page Publications';
+echo 'page Publications'; ?>
+
+<?php get_footer(); ?>

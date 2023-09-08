@@ -240,6 +240,31 @@
                 </svg>
             </a>
 
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div id="mobile-menu" class="mobile-menu">
+                <ul class="favicon_mobile">
+                    <li><a class="nav_favicon" href="<?php echo esc_url( get_search_link() ); ?>"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a class="nav_favicon" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a class="nav_favicon" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+
+                <?php 
+                    wp_nav_menu( [
+                        'theme_location'  => 'header',
+                        'container'       => false,
+                        'menu_class'      => 'menu',
+                        'menu_id'         => false,
+                        'echo'            => true,
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    ] );
+                ?>
+            </div>
             <div class="header_menu">
                 <?php 
                     wp_nav_menu( [
@@ -251,7 +276,16 @@
                         'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     ] );
                 ?>
-            </div>        
+
+                <ul>
+                    <li><a class="nav_favicon" href="<?php echo esc_url( get_search_link() ); ?>"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a class="nav_favicon" href="https://uk-ua.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a class="nav_favicon" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>     
+
+            
+
 
         </div>
     </div>

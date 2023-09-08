@@ -1,4 +1,4 @@
 <?php get_header();
-echo 'page Opportunities'; ?>
+echo 'this is searchform'; ?>
 
 <?php get_footer(); ?>

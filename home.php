@@ -25,5 +25,7 @@ echo 'blog home php';
         Записей нет.
     <?php endif; ?>
 </div>
+
+<?php get_footer(); ?>
     
 
