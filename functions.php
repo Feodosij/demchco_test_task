@@ -7,7 +7,6 @@ if( ! function_exists('demchco_setup')) {
 			'flex-width'  => false,
 			'flex-height' => false,
 			'header-text' => '',
-			// 'unlink-homepage-logo' => true,
 		] );
 
 		add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
@@ -16,8 +15,6 @@ if( ! function_exists('demchco_setup')) {
 
 		add_image_size('big', 618, 463, true);
 		add_image_size('small', 223, 167, true);
-
-
 	}
 
 	add_action( 'after_setup_theme', 'demchco_setup' );
@@ -38,8 +35,6 @@ function demchco_theme_scripts() {
 
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('custom-burger-menu', get_template_directory_uri() . '/scripts/custom-burger-menu.js', array('jquery'), '1.0.0', true);
-
-	
 }
 
 /**
@@ -54,15 +49,6 @@ function demchco_menus() {
 
 add_action( 'init', 'demchco_menus' );
 
-
-// add class social-menu-item to social in menu
-// add_filter('nav_menu_css_class' , 'special_nav_class', 10, 2);
-// function special_nav_class($classes, $item){
-//      if($item->ID === 26 || $item->ID === 25){
-//              $classes[] = 'social-menu-item';
-//      }
-//      return $classes;
-// }
 
 /**
  * taxonomies
@@ -81,15 +67,3 @@ add_action( 'init', 'init_taxonomy');
 		'hierarchical' => true,
 	));
  }
-
- function custom_category_query( $query ) {
-    if ( is_admin() || ! $query->is_main_query() ) {
-        return;
-    }
-
-    if ( is_category( 'anons' ) ) { // Замените 'ваша-категория' на реальный слаг вашей категории
-        $query->set( 'posts_per_page', 10 ); // Устанавливаем количество постов на странице
-    }
-}
-add_action( 'pre_get_posts', 'custom_category_query' );
-

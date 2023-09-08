@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>demchco</title>
     <?php wp_head(); ?>
 </head>
 <body>
@@ -249,9 +249,9 @@
 
             <div id="mobile-menu" class="mobile-menu">
                 <ul class="favicon_mobile">
-                    <li><a class="nav_favicon" href="<?php echo esc_url( get_search_link() ); ?>"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li><a class="nav_favicon" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a class="nav_favicon" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a class="nav_favicon" href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a class="nav_favicon" href="https://uk-ua.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a class="nav_favicon" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
 
                 <?php 
@@ -278,19 +278,13 @@
                 ?>
 
                 <ul>
-                    <li><a class="nav_favicon" href="<?php echo esc_url( get_search_link() ); ?>"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a class="nav_favicon" href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                     <li><a class="nav_favicon" href="https://uk-ua.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
                     <li><a class="nav_favicon" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
-            </div>     
-
-            
-
-
+            </div>
         </div>
     </div>
-
-    
 </header>
 
 
